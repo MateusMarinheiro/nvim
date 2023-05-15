@@ -12,7 +12,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     install_path,
   }
   print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
+  vim.cmd[[packadd packer.nvim]]
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -76,9 +76,16 @@ return packer.startup(function(use)
   use('hrsh7th/cmp-buffer')
   use('hrsh7th/cmp-path')
   use('hrsh7th/cmp-cmdline')
+  use('hrsh7th/cmp-nvim-lua')
   use('saadparwaiz1/cmp_luasnip')
 
   -- snippets
   use('L3MON4D3/LuaSnip')
   use('rafamadriz/friendly-snippets')
+
+  -- LSP
+  use('neovim/nvim-lspconfig')
+  use("williamboman/mason.nvim") -- simple to use language server installer
+  use("williamboman/mason-lspconfig.nvim") -- simple to use language server installer
+  use('jose-elias-alvarez/null-ls.nvim') -- LSP diagnostics and code actions
 end)
