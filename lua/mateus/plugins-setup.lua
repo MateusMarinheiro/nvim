@@ -37,10 +37,8 @@ packer.init {
     end,
   },
 }
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
-
+-- Add your plugins here
 return packer.startup(function(use)
   use('wbthomason/packer.nvim')
   use('nvim-lua/popup.nvim')
